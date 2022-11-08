@@ -1,6 +1,9 @@
+
 {% extends 'base.html' %}
 {% load blog_extras %}
 {% block content %}
+{% include "blog/post-comments.html" %}
+
 <h2>{{ post.title }}</h2>
 {% row "border-bottom" %}
   {% col %}
