@@ -180,8 +180,16 @@ class Dev(Configuration):
         "handlers": ["console"],
         "level": "DEBUG",
     },
-  } 
-
+  }
+#   password hashing with argon[2]
+#   pip3 install argon2_cffi
+# pip3 install -U cffi pip setuptools 
+#   PASSWORD_HASHERS = [
+#       'django.contrib.auth.hashers.Argon2PasswordHasher',
+#       'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+#       'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+#       'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+#   ]
 
 class Prod(Dev):
   DEBUG = False
