@@ -1,9 +1,11 @@
+import logging
 from django.contrib.auth import get_user_model
 from django import template
 from django.utils.html import format_html
 
 user_model = get_user_model()
 register = template.Library()
+logger = logging.getLogger(__name__)
 
 
 @register.filter
@@ -51,6 +53,7 @@ def author_details_tag(context):
     request = context["request"]
     current_user = request.user
     post = context["post"]
+    logger.debug("Loaded %d recent posts for post %d", len(posts), post.pk)
     author = post.author
 
     if author == current_user:
